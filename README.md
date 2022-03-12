@@ -1,2 +1,2 @@
 # pizzas-app-api
-Pizzas app api source code
+Pizzas App API source code
