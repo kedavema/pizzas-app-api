@@ -8,17 +8,19 @@ class UserAdmin(BaseUserAdmin):
     ordering = ['id']
     list_display = ['email', 'name']
     fieldsets = (
-      (None, {'fields': ('email', 'password')}),
-      ('Personal Info', {'fields': ('name',)}),
-      ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser')}),
-      ('Important Dates', {'fields': ('last_login',)})
+        (None, {'fields': ('email', 'password')}),
+        ('Personal Info', {'fields': ('name',)}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser')}),
+        ('Important Dates', {'fields': ('last_login',)})
     )
     add_fieldsets = (
-      (None, {
-        'classes': ('wide',),
-        'fields': ('email', 'password1', 'password2')
-      }),
+        (None, {
+            'classes': ('wide',),
+            'fields': ('email', 'password1', 'password2')
+        }),
     )
-    
-    
+    list_display = ('email', 'name', 'is_superuser')
+    search_fields = ('email', 'first_name', 'last_name')
+
+
 admin.site.register(models.User, UserAdmin)
