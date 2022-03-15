@@ -7,18 +7,18 @@ from product.utils import resource_checker
 
 
 class UsersAPIView(APIView):
-  
+
     def get(self, request, format=None):
         users = get_user_model().objects.all()
         serializer = UserSerializer(users, many=True)
         return Response(serializer.data)
-      
+
     def post(self, request, format=None):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class UserDetailAPIView(APIView):
@@ -37,7 +37,7 @@ class UserDetailAPIView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-      
+
     @resource_checker(get_user_model())
     def delete(self, request, pk, format=None):
         user = get_user_model().objects.filter(id=pk).first()

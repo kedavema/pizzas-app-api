@@ -4,11 +4,12 @@ from django.db import models
 
 
 class UserManager(BaseUserManager):
+    """User manager"""
 
     def create_user(self, email, password=None, **extra_fields):
-        """Creates and saves a new user. """
+        """Creates and saves a new user"""
         if not email:
-            raise ValueError("Users must have an email address.")
+            raise ValueError("Users must have an email address")
         user = self.model(email=self.normalize_email(email), **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
@@ -26,7 +27,7 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    """Custom user model that supports using email instead of username. """
+    """Custom user model that supports using email instead of username"""
     email = models.EmailField(max_length=255, unique=True)
     name = models.CharField(max_length=255)
     is_active = models.BooleanField(default=True)
@@ -35,7 +36,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
-    
+
 
 class PizzaAbstract(models.Model):
     name = models.CharField(max_length=50, unique=True)

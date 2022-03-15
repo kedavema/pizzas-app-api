@@ -9,11 +9,10 @@ class Category(PizzaAbstract):
 class Ingredient(PizzaAbstract):
     """Ingredient Model. """
     category = models.ManyToManyField('Category')
-    
+
 
 class Pizza(PizzaAbstract):
     """Pizza Model. """
-    price = models.IntegerField('Precio')
-    ingredients = models.ManyToManyField('Ingredient', null=False)
+    price = models.IntegerField()
+    ingredients = models.ManyToManyField('Ingredient')
     is_active = models.BooleanField(default=True)
-    
