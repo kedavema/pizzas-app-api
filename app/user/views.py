@@ -7,7 +7,7 @@ from product.utils import resource_checker
 
 
 class UsersAPIView(APIView):
-
+  
     def get(self, request, format=None):
         users = get_user_model().objects.all()
         serializer = UserSerializer(users, many=True)

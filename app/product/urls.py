@@ -3,6 +3,7 @@ from product.views import (
                             PizzasAPIView, PizzaDetailAPIView,
                             IngredientsAPIView, IngredientDetailAPIView,
                             CategoriesAPIView, CategoryDetailAPIView,
+                            DeleteIngredientPizza
                            )
 
 
@@ -16,4 +17,5 @@ urlpatterns = [
     path('ingredients/<int:pk>', IngredientDetailAPIView.as_view(), name='ingredient-detail'),
     path('categories', CategoriesAPIView.as_view(), name='categories'),
     path('categories/<int:pk>', CategoryDetailAPIView.as_view(), name='category-detail'),
+    path('from/<int:pizza_id>/delete/<int:ingredient_id>', DeleteIngredientPizza.as_view(), name='delete-ingredient-pizza'),
 ]
