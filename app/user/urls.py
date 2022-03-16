@@ -1,11 +1,8 @@
-from unicodedata import name
 from django.urls import path
 from rest_framework.authtoken import views
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-)
-from user.views import UsersAPIView, UserDetailAPIView
+from rest_framework_simplejwt.views import (TokenObtainPairView,
+                                            TokenRefreshView)
+from user.views import UserDetailAPIView, UsersAPIView
 
 app_name = "user"
 

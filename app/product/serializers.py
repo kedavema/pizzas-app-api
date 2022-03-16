@@ -1,5 +1,5 @@
+from product.models import Category, Ingredient, Pizza
 from rest_framework import serializers
-from product.models import Pizza, Ingredient, Category
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -27,7 +27,7 @@ class IngredientSerializer(serializers.ModelSerializer):
 
 
 class PizzaSerializer(serializers.ModelSerializer):
-    """Serializer fot the Pizza object. """
+    """Serializer fot the Pizza object"""
     name = serializers.CharField(required=True)
     price = serializers.IntegerField(required=True)
     ingredients = serializers.PrimaryKeyRelatedField(

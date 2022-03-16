@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'core',
     'user',
     'product',
+    'drf_yasg',
 ]
 
 REST_FRAMEWORK = {
@@ -78,6 +79,10 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
     'SLIDING_TOKEN_LIFETIME': timedelta(hours=6),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=6),
+}
+
+SWAGGER_SETTINGS = {
+    'DOC_EXPANSION': 'none'
 }
 
 MIDDLEWARE = [

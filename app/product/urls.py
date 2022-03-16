@@ -1,11 +1,8 @@
 from django.urls import path
-from product.views import (
-    PizzasAPIView, PizzaDetailAPIView,
-    IngredientsAPIView, IngredientDetailAPIView,
-    CategoriesAPIView, CategoryDetailAPIView,
-    DeleteIngredientPizza
-)
-
+from product.views import (CategoriesAPIView, CategoryDetailAPIView,
+                           DeleteIngredientPizza, IngredientDetailAPIView,
+                           IngredientsAPIView, PizzaDetailAPIView,
+                           PizzasAPIView)
 
 app_name = 'product'
 
