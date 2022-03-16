@@ -4,7 +4,7 @@
 
 Proyecto backend de una Pizzería desarrollado en Python con Django, Django REST Framework, Postgresql y Docker.
 
-En el proyecto he endopints para la autenticación básica de REST Framework, así también autenticación por JWT(JSONWebToken), utilizando código limpio siguiendo los estándares PEP-8 de Python así también el orden de las importaciones de Django.
+En el proyecto he creado endpoints para la autenticación básica de REST Framework, así también autenticación por JWT(JSONWebToken), utilizando código limpio siguiendo los estándares PEP-8 de Python así también el orden de las importaciones de Django.
 
 La API está contenerizada con Docker, utilizando la base de datos Postgresql
 
@@ -35,10 +35,10 @@ La aplicación probablemente lanzará una excepción la primera vez, porque inte
 Luego de reiniciar debería de continuar con las respectivas migraciones y posterior ejecución del servidor.
 
 ### Probar la aplicación:
-Para probar los endpoints basta con entrar al archivo req.http dentro de cada carpeta app, para ello debe tener instalado en su editor de código un cliente REST(por ejemplo **REST Client**, para Visual Studio Code).
+Para probar los endpoints basta con abrir el archivo de colección de Postman, contenida dentro de la carpeta raiz.
 
 ### Endpoints creados:
-- Creación de usuarios(administrador, usuario normal).
+- CRUD de usuarios.
 - CRUD de las Categorías de los ingredientes.
 - CRUD de los Ingredientes.
 - CRUD de las Pizzas.
@@ -60,4 +60,3 @@ Para desactivar un objeto Pizza basta con entrar al administrador de django con 
 ### Testing ⚙️
 Me pareció súper importante agregar test por lo menos para la aplicación de usuarios.
 Para ejecutar los test debe ejecutar en otra terminal el comando ```docker-compose run --rm app sh -c "python manage.py test"```
-
